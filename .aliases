@@ -1,0 +1,27 @@
+# Shortcuts
+alias d="cd /Volumes/GoogleDrive"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec ${SHELL} -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# Disable Spotlight
+alias spotoff="sudo mdutil -a -i off"
+# Enable Spotlight
+alias spoton="sudo mdutil -a -i on"
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Recursively delete `.DS_Store` files because they are annoying
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Kill all the tabs in Chrome to free up memory
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
